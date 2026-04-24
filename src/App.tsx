@@ -15,8 +15,10 @@ import {
   Users,
   TrendingUp,
   Copy,
-  Check
+  Check,
+  ImageIcon
 } from 'lucide-react';
+import ImageGallery from './components/ImageGallery';
 
 const CopyButton = ({ text, className = "text-slate-500 hover:text-slate-900 hover:bg-slate-200" }: { text: string, className?: string }) => {
   const [copied, setCopied] = useState(false);
@@ -37,6 +39,8 @@ const CopyButton = ({ text, className = "text-slate-500 hover:text-slate-900 hov
     </button>
   );
 };
+
+const highlights = Array.from({ length: 10 }, (_, i) => `/${i + 1}.jpg`);
 
 export default function App() {
   const goalAmount = 2092800;
@@ -261,6 +265,22 @@ export default function App() {
         </div>
       </main>
       
+      {/* Highlights Gallery */}
+      <section className="bg-slate-900 py-16 border-t-2 border-b-2 border-slate-900 relative z-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+           <div className="flex items-center gap-3">
+             <ImageIcon className="w-8 h-8 text-orange-400" />
+             <h2 className="text-3xl font-black text-white tracking-tight uppercase">精彩回顧 Highlights</h2>
+           </div>
+           <p className="text-slate-400 mt-2 font-medium">看見球員們在場上的拚搏與汗水（照片可左右滑動）</p>
+        </div>
+        
+        {/* Dynamic Image Gallery */}
+        <div className="px-4 pb-16">
+          <ImageGallery images={highlights} />
+        </div>
+      </section>
+
       {/* Footer / Contact */}
       <footer className="bg-slate-50 text-slate-900 pt-16 pb-8 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
