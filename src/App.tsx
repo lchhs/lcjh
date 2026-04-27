@@ -272,7 +272,7 @@ export default function App() {
              <ImageIcon className="w-8 h-8 text-orange-400" />
              <h2 className="text-3xl font-black text-white tracking-tight uppercase">精彩回顧 Highlights</h2>
            </div>
-           <p className="text-slate-400 mt-2 font-medium">看見球員們在場上的拚搏與汗水（照片可左右滑動）</p>
+           <p className="text-slate-400 mt-2 font-medium">看見球員們在場上的拚搏與汗水</p>
         </div>
         
         {/* Dynamic Image Gallery */}
